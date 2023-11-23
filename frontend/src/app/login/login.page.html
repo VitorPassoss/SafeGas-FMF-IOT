@@ -1,0 +1,11 @@
+<ion-content [fullscreen]="true" class="content">
+  <div class="card-login">
+    <form (ngSubmit)="submitForm()" [formGroup]="loginForm">
+      <div class="card-struct">
+        <ion-input name="email" formControlName="email" label="Email" label-placement="floating" fill="outline" placeholder="Insira seu Email"></ion-input>
+        <ion-input name="senha" formControlName="password" label="Senha" label-placement="floating" fill="outline" placeholder="Insira sua senha"></ion-input>
+        <ion-button type="submit" expand="block">Entrar</ion-button>
+      </div>
+    </form>
+  </div>
+</ion-content>

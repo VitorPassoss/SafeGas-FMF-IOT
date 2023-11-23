@@ -1,0 +1,105 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>
+        <div class="title">
+            <p>SafeGás</p>
+        </div>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+<ion-content [fullscreen]="true" class="content">
+    <div class="card">
+  
+
+    <div class="titlegas">
+        <p class="title-grp">Concentração de gás (PPM)</p>
+    </div>
+
+    <div class="peso-struct">
+        <p class="value">
+            {{values[0]}}
+        </p>
+        <div class="pesodiv">
+            <canvas id="chartCanvas"></canvas>
+        </div>
+    </div>
+      
+    </div>
+
+   <div class="graphdown">
+    <div >
+        <ion-grid class="card">
+            <ion-row>
+              <ion-col size="6">
+                <div class="card-chart">
+                    <p class="title-grp">Temperatura</p>
+                    <div class="value-struct">
+                        <p class="value">
+                            {{temperatura}}º
+                        </p>
+                    </div>
+                
+                </div>
+              </ion-col>
+              <ion-col size="6">
+                <div class="card-chart btn" >
+                    <p class="title-grp">Umidade</p>
+                    <div class="value-struct">
+                        <p class="value">
+                            {{umidade}}%
+                        </p>
+                    </div>
+                  
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+    </div>
+   </div>
+
+   <div class="card card2">
+    <p class="title-grp">Quantidade(kg)</p>
+    <div class="peso-struct">
+        <p class="value">
+            {{quantidadePeso}}
+        </p>
+        <div class="pesodiv">
+            <canvas id="chartCanvas2"></canvas>
+        </div>
+    </div>
+      
+</div>
+
+
+
+   <div class="alert" *ngIf="alertOpen">
+        <div class="card-alert">
+            <div class="title">
+                <h1>Vazamento Detectado!</h1>
+            </div>
+            <img src="../../assets/gas.png" alt="">
+            <div class="subtitle">
+                <p>Evacue o local imediatamente e chame as autoridades.</p>
+            </div>
+
+            <div class="grid-btn">
+                <div class="col">
+                    <ion-button expand="block" color="danger" (click)="callFireMan()">
+                        <ion-icon slot="start" name="call"></ion-icon>
+                        Bombeiro
+                    </ion-button>
+                </div>
+
+                <div class="col">
+                    <ion-button expand="block" (click)="ignoreAlert()">
+                        Ignorar
+                        <ion-icon slot="end"  name="alert"></ion-icon>
+                    </ion-button>
+                </div>
+            </div>
+        </div>
+   </div>
+
+ </ion-content>
